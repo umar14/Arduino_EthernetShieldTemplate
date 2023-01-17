@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Stream Control</title>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        background-color: #2196f3;
+        padding: 10px;
+      }
+      .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+        font-family: sans-serif;
+      }
+      .network {
+        text-align: center;
+      }
+      .button {
+        background-color: rgb(210, 101, 101);
+        border: rgb(197, 119, 119);
+        color: 2px solid #4CAF50;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-family: sans-serif;
+        border-radius: 12px;
+      }
+      .button:hover {
+        background-color: #4caf50;
+        color: white;
+      }
+      h1 {
+        text-align: center;
+        font-size: 36px;
+        color: rgb(221, 9, 9);
+        font-family: Verdana;
+      }
+      label {
+        color: rgb(2, 2, 2);
+        font-family: Verdana;
+        font-size: 90%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Stream Control</h1>
+    <div class="grid-container">
+      <div class="grid-item">Output A:</div>
+      <div class="grid-item">Output B:</div>
+      <div class="grid-item">Output C:</div>
+      <div class="grid-item">Output D:</div>
+
+      <div class="grid-item">
+        <form action="/">
+          <label>Universe:</label> <input size="10" type="text" pattern="^[1-6]{1}[0-9]{0,3}$" name="a1" value="OutputA" /><br />
+          <label>Colour:</label>  <select name="a2">
+            <option value="0" selected="selected">Red</option>
+            <option value="1">Orange</option>
+            <option value="2">Yellow</option>
+            <option value="3">Green</option>
+            <option value="4">Fern</option>
+            <option value="5">Cyan</option>
+            <option value="6">Blue</option>
+            <option value="7">Purple</option>
+            <option value="8">White</option>
+          </select><br>
+          <label>Linking Key:</label> <input size=10 type="text" pattern="^[1-6]{1}[0-9]{0,3}$" name="a3" value="inkKeyA" /><br /><br>
+          <input class="button" type="submit" value="CHANGE" />
+        </form>
+      </div>
+ 
+      <div class="grid-item">
+        <form action="/">
+          <label>Universe:</label> <input size="10" type="text" pattern="^[1-6]{1}[0-9]{0,3}$" name="b1" value="OutputB" /><br />
+          <label>Colour:</label>  <select name="b2">
+            <option value="0" selected="selected">Red</option>
+            <option value="1">Orange</option>
+            <option value="2">Yellow</option>
+            <option value="3">Green</option>
+            <option value="4">Fern</option>
+            <option value="5">Cyan</option>
+            <option value="6">Blue</option>
+            <option value="7">Purple</option>
+            <option value="8">White</option>
+          </select><br>
+          <label>Linking Key:</label> <input size=10 type="text" pattern="^[1-6]{1}[0-9]{0,3}$" name="b3" value="inkKeyB" /><br /><br>
+          <input class="button" type="submit" value="CHANGE" />
+        </form>
+      </div>
+
+      <div class="grid-item">
+        <form action="/">
+          <label>Universe:</label> <input size="10" type="text" pattern="^[1-6]{1}[0-9]{0,3}$" name="c1" value="OutputC" /><br />
+          <label>Colour:</label>  <select name="c2">
+            <option value="0" selected="selected">Red</option>
+            <option value="1">Orange</option>
+            <option value="2">Yellow</option>
+            <option value="3">Green</option>
+            <option value="4">Fern</option>
+            <option value="5">Cyan</option>
+            <option value="6">Blue</option>
+            <option value="7">Purple</option>
+            <option value="8">White</option>
+          </select><br>
+          <label>Linking Key:</label> <input size=10 type="text" pattern="^[1-6]{1}[0-9]{0,3}$" name="c3" value="inkKeyC" /><br /><br>
+          <input class="button" type="submit" value="CHANGE" />
+        </form>
+      </div>
+
+      <div class="grid-item">
+        <form action="/">
+          <label>Universe:</label> <input size="10" type="text" pattern="^[1-6]{1}[0-9]{0,3}$" name="d1" value="OutputD" /><br />
+          <label>Colour:</label>  <select name="d2">
+            <option value="0" selected="selected">Red</option>
+            <option value="1">Orange</option>
+            <option value="2">Yellow</option>
+            <option value="3">Green</option>
+            <option value="4">Fern</option>
+            <option value="5">Cyan</option>
+            <option value="6">Blue</option>
+            <option value="7">Purple</option>
+            <option value="8">White</option>
+          </select><br>
+          <label>Linking Key:</label> <input size=10 type="text" pattern="^[1-6]{1}[0-9]{0,3}$" name="d3" value="inkKeyD" /><br /><br>
+          <input class="button" type="submit" value="CHANGE" />
+        </form>
+      </div>
+
+      <div class="grid-item">StatusA</div>
+      <div class="grid-item">StatusB</div>
+      <div class="grid-item">StatusC</div>
+      <div class="grid-item">StatusD</div>
+      <div class="grid-item">
+        <form action="/">
+          <input class="button" name="SYNCA" type="submit" value="SYNC" />
+        </form>
+      </div>
+      <div class="grid-item">
+        <form action="/">
+          <input class="button" name="SYNCB" type="submit" value="SYNC" />
+        </form>
+      </div>
+      <div class="grid-item">
+        <form action="/">
+          <input class="button" name="SYNCC" type="submit" value="SYNC" />
+        </form>
+      </div>
+      <div class="grid-item">
+        <form action="/">
+          <input class="button" name="SYNCD" type="submit" value="SYNC" />
+        </form>
+      </div>
+    </div>
+    <div class="network">
+      <h1>Network Settings</h1>
+      <form action="/">
+        <label for="ip">IP Address:</label>
+        <input type="text" pattern="^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$" name="ip" value="VAR1" /><br /><br />
+        <label for="subnet">Subnet:</label>
+        <input type="text" pattern="^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$" name="subnet" value="VAR2" /><br /><br />
+        <label for="gw">Gateway:</label>
+        <input type="text" pattern="^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$" name="gw" value="VAR3" /><br /><br />
+        <label for="mac">MAC Address:</label>
+        <input type="text" pattern="^([0-9A-Fa-f]{2}[-]){5}([0-9A-Fa-f]{2})$" name="mac" value="VAR4" /><br /><br />
+        <input class="button" type="submit" value="CHANGE" />
+      </form>
+    </div>
+  </body>
+</html>
